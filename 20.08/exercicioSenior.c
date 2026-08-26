@@ -35,10 +35,13 @@ int main(){
         tentativas += 1;
         validarSorteio(sorteio, num);
 
-    } while (num != sorteio);
+    } while (tentativas < 5 && num != sorteio);
 
-    
     printf("Número de tentativas: %d\n", tentativas);
+    if (num != sorteio){
+        printf("Você excedeu o número máximo de tentativas\n");
+        printf("O número sorteado era: %d\n", sorteio);
+    }
     
     return 0;
 }
